@@ -22,7 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Configuration
-BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN') or os.getenv('BOT_TOKEN')
 TARGET_GROUP_ID = int(os.getenv('TARGET_GROUP_ID', 0))
 OPEN_TIME = os.getenv('OPEN_TIME', '07:00')
 CLOSE_TIME = os.getenv('CLOSE_TIME', '22:00')
