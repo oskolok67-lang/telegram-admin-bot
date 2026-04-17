@@ -1,7 +1,13 @@
 FROM python:3.11-slim
 
 # Install system dependencies including Rust for pydantic-core
-RUN apt-get update && apt-get install -y gcc cargo rustc && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    gcc \
+    cargo \
+    rustc \
+    && rm -rf /var/lib/apt/lists/* \
+    && rustup update stable \
+    && rustup default stable
 
 WORKDIR /app
 
